@@ -1,0 +1,123 @@
+/* pages/itemDetail/itemDetail.wxss */
+@import "~taro-ui/dist/style/components/form.scss";
+@import "~taro-ui/dist/style/components/button.scss";
+@import "~taro-ui/dist/style/components/input.scss";
+@import "~taro-ui/dist/style/components/icon.scss";
+@import "~taro-ui/dist/style/components/textarea.scss";
+@import "~taro-ui/dist/style/components/modal.scss";
+
+.item-detail-form .item-comment {
+  width: 100%;
+}
+
+.item-detail-form .weui-label {
+  font-size: 30px;
+  color: #ddd;
+}
+
+button {
+  width: 60%;
+}
+
+.item-form-desc{
+  font-size: 40rpx;
+  color: #3b78e7 !important;
+  text-align: center;
+  padding: 64rpx 0;
+}
+
+.item-form-subtitle{
+  font-size: 25rpx;
+  color:rgba(59, 120, 231, 0.68);
+  padding: 24rpx 32rpx 12rpx;
+}
+
+.times {
+  color: #ddd;
+  font-size: 25px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.item-detail-btns {
+  display: flex;
+  margin-top: -47px;
+}
+
+.item-detail-btn {
+  width: 40%;
+  margin-top: 0 !important;
+}
+
+.dialog-class {
+  z-index: 100;
+}
+.weui-form__title,
+.weui-cells__title,
+.weui-form__desc,
+.at-input__input {
+  color: #3b78e7 !important;
+}
+.weui-input,
+.weui-input::placeholder,
+.item-comment {
+  color: #3b78e7;
+  font-size: 32rpx;
+}
+.at-input__title {
+  margin-right: 100rpx;
+  color: #3b78e7;
+}
+.text-area-title {
+  height: 48rpx;
+}
+
+.form-line,.form-line-last {
+  background-color: #fff;
+  position: relative;
+  padding: 24rpx 0;
+  margin: 0 32rpx 2rpx 32rpx;
+}
+.form-line-last{
+  padding: 24rpx 0 48rpx 0;
+}
+
+.form-picker,.form-picker .weui-input {
+  height: 50rpx;
+}
+
+.form-line::after{
+ content: '';
+position: absolute;
+-webkit-transform-origin: center;
+transform-origin: center;
+box-sizing: border-box;
+pointer-events: none;
+top: -50%;
+left: -50%;
+right: -50%;
+bottom: -50%;
+border-bottom: 1PX solid #d6e4ef;
+-webkit-transform: scale(0.5);
+transform: scale(0.5);
+border-bottom-width: 1PX;
+}
+
+.check-icon{
+  color:#f00;
+  margin-right: 48rpx;
+
+}
+
+.form-btn{
+  margin: 32rpx;
+}
+.form-btns{
+  float: left;
+width: 100%;
+
+}
+.content-simple{
+  text-align: center;
+}

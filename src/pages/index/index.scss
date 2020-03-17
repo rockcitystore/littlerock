@@ -1,0 +1,203 @@
+/**index.wxss**/
+
+.black {
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128px;
+  height: 128px;
+  margin: 20px;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 400px;
+}
+
+.header {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  color: #ddd;
+  align-items: center;
+  padding: 20px 0 50px 0;
+  height: 60px;
+  line-height: 60px;
+}
+
+.header-right {
+  display: flex;
+}
+
+.item-btn {
+  font-size: 60px;
+  display: inline;
+  margin: 0 10px;
+}
+
+.search-item-bar {
+  border: 1px solid #ffe900;
+  height: 80px;
+  line-height: 80px;
+  opacity: 0;
+  z-index: -1;
+  color: #222;
+  position: absolute;
+  left: 20%;
+  font-size: 40px;
+  background-color: #fff;
+  width: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.search-item-bar-tool {
+  width: 500px;
+  height: 80px;
+  background-color: #ffe900;
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  z-index: 100;
+  display: none;
+}
+
+.search-item-bar-tool-active {
+  animation: user-active-strong 400ms;
+}
+
+@keyframes user-active-strong {
+  0% {
+    box-shadow: 1px 1px 1px #ffe900;
+  }
+
+  30% {
+    box-shadow: 1px 1px 200px #ffe900;
+  }
+
+  80% {
+    box-shadow: 1px 1px 500px #ffe900;
+  }
+
+  100% {
+    box-shadow: 1px 1px 900px #ffe900;
+  }
+}
+
+.search-item-bar-open {
+  animation: search-bar-open ease-in-out 300ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes search-bar-open {
+  0% {
+    opacity: 0;
+    top: 0%;
+    z-index: 100;
+  }
+
+  30% {
+    opacity: 0.3;
+    z-index: 100;
+  }
+
+  100% {
+    top: 20%;
+    opacity: 1;
+    z-index: 100;
+  }
+}
+
+.cha-bar {
+  padding: 10px 15px;
+}
+
+.cha-btn {
+  height: 78px;
+  padding: 0 15px;
+  border-radius: 100%;
+  margin-top: 15rpx;
+}
+.cha-btn icon {
+  height: 50px;
+}
+
+/* .cha-btn:active {
+  animation: cha-btn-active 200ms;
+} */
+
+@keyframes cha-btn-active {
+  0% {
+    border-radius: 80px;
+    background-color: #fff;
+  }
+
+  100% {
+    border-radius: 0px;
+    background-color: #ddd;
+  }
+}
+
+.add-item-btn {
+  color: #f88;
+}
+
+.search-item-btn {
+  color: #a88;
+}
+
+.btn-active {
+  animation: btn-active 200ms;
+}
+
+@keyframes btn-active {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.item-record {
+  font-size: 28px;
+}
+
+.index-footer {
+  margin: 50px 0;
+  color: #ddd;
+}
+.not-found {
+  display: none;
+  margin: 50px 0;
+  color: #222;
+}
+.show-not-found {
+  display: block;
+}
