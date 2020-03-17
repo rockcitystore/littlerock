@@ -69,7 +69,7 @@ class App extends Taro.Component {
       navigationBarTitleText: '石城商场',
       navigationBarTextStyle: 'black'
     },
-    sitemapLocation: 'sitemap79.json',
+    sitemapLocation: 'sitemap.json',
     usingComponents: {
     },
     plugins: {

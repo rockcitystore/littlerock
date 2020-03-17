@@ -46,7 +46,14 @@ const app = Taro.getApp()
           required: true,
           message: 'stock必填'
         }
-      }
+      },
+      {
+        name: 'totalPrice',
+        rules: {
+          required: true,
+          message: 'totalPrice必填'
+        }
+      },
     ]
   },
   onLoad: function () {
@@ -197,6 +204,9 @@ const app = Taro.getApp()
   validate(data) {
     console.log('validate', data)
     return new Promise((resolve) => {
+      this.setData({
+        showRequired:{}
+      })
       let errorObj = {}
       //validate form data
       for (let i = 0, il = this.data.rules.length; i < il; i++) {
@@ -205,8 +215,10 @@ const app = Taro.getApp()
         if (rule.rules.required) {
           let key = rule.name
           let value = data[key]
-          console.log(key, value)
-          if (value === 0 || value !== undefined || value !== '' || value !== null) {
+          console.log(key, value,typeof value,value === 0 ,value !== undefined,value !== '' , value !== null)
+          if(Number(value)===0){
+            // console.log('ok')
+          }else if (value !== undefined && value !== '' && value !== null) {
             // console.log('ok')
           } else {
             // console.log(rule.rules.message)
@@ -241,7 +253,7 @@ const app = Taro.getApp()
         })
       } else {
         console.log('addItem')
-        // this.addItem() //TODO  jiaoyan shixiao
+        this.addItem() 
       }
     })
   },
