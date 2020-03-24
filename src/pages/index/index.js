@@ -162,7 +162,6 @@ const app = Taro.getApp()
     })
     // this.goToItemDetail()
     this.watchItem()
-    Taro.clearStorage()
   },
   onLoad: function() {
     console.log('index onLoad')

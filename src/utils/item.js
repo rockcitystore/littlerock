@@ -12,6 +12,7 @@ const add = data => {
   })
   data.state = STATES.ADD
   data.createTime = db.serverDate()
+  data.updateTime = data.createTime
   return new Promise(function(resolve, reject) {
     return db.itemDetailDb.add({
       // data 字段表示需新增的 JSON 数据
@@ -110,7 +111,8 @@ const watch = callback => {
     .where({
       state: db._.neq(STATES.DEL)
     })
-    .orderBy('updateTime', 'asc')
+    .orderBy('updateTime', 'desc')
+    // .orderBy('createTime', 'desc')
     .watch({
       onChange: function(res) {
         // console.log(res.docs)

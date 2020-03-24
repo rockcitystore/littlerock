@@ -1,5 +1,4 @@
 /* eslint-disable no-shadow */
-import { Block } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import withWeapp from '@tarojs/with-weapp'
 import './app.scss'

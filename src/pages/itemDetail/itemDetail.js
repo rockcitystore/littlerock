@@ -7,7 +7,7 @@ import {
 } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import withWeapp from '@tarojs/with-weapp'
-import { AtForm, AtIcon, AtModal, AtButton } from 'taro-ui'
+import { AtForm, AtModal, AtButton } from 'taro-ui'
 
 import './itemDetail.scss'
 import item from '../../utils/item.js'
@@ -99,7 +99,9 @@ const app = Taro.getApp()
               res[0].createTime &&
               res[0].createTime.toLocaleString('zh-CN', { hour12: false })
             return this.setData({
-              formData: res[0] || {}
+              formData: res[0] || {},
+              descLength:res[0].desc&&res[0].desc.length,
+              commentLength:res[0].comment&&res[0].comment.length,
             })
           }
         )
@@ -446,12 +448,7 @@ class _C extends Taro.Component {
                 </View>
               </View>
             </View>
-            <View className='form-btns'>
-            <AtButton formType='submit' type='primary' size='normal' loading={isLoading} className='form-btn'>提交</AtButton>
-            {pageState==='add' ? <AtButton formType='reset' type='secondary' size='normal' className='form-btn'>重置</AtButton> : <AtButton onClick={this.openConfirm.bind(this)} type='secondary' size='normal' className='form-btn'>删除</AtButton>}
-          </View>
-        </AtForm>
-        <View className='times'>
+            <View className='times'>
           {formData.createTime && (
             <View>{'创建于:' + formData.createTime}</View>
           )}
@@ -460,6 +457,12 @@ class _C extends Taro.Component {
             <View>{',更新于:' + formData.updateTime}</View>
           )}
         </View>
+            <View className='form-btns'>
+            <AtButton formType='submit' type='primary' size='normal' loading={isLoading} className='form-btn'>提交</AtButton>
+            {pageState==='add' ? <AtButton formType='reset' type='secondary' size='normal' className='form-btn'>重置</AtButton> : <AtButton onClick={this.openConfirm.bind(this)} type='secondary' size='normal' className='form-btn'>删除</AtButton>}
+          </View>
+        </AtForm>
+      
         <AtModal
           className='dialog-class'
           isOpened={dialogShow}
